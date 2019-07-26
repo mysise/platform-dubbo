@@ -10,6 +10,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>mysise-service</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>mysise-user</module>
+    </modules>
 
 
 </project>
