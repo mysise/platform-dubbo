@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>mysise-user-api</module>
+        <module>mysise-user-service</module>
     </modules>
 
 
