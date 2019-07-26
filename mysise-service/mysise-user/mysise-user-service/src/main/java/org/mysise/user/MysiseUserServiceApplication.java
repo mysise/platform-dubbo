@@ -1,4 +1,4 @@
-package org.mysise.user.service;
+package org.mysise.user;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
