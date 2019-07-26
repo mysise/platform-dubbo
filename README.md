@@ -1,1 +1,1 @@
-Spring-boot + dubbo 脚手架
+Spring-boot + dubbo + mybatis plus脚手架
