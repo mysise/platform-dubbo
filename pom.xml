@@ -9,10 +9,8 @@
     <packaging>pom</packaging>
     <version>1.0.0</version>
     <modules>
-        <module>dubbo-momcon</module>
         <module>mysise-common</module>
         <module>mysise-service</module>
-        <module>mysise-gatway</module>
         <module>mysise-gateway</module>
     </modules>
 
