@@ -21,6 +21,7 @@
     </parent>
     <properties>
         <java.version>1.8</java.version>
+        <mysql.version>5.1.42</mysql.version>
     </properties>
     <dependencies>
 
@@ -30,7 +31,12 @@
     <!-- 版本说明：这里统一管理依赖的版本号 -->
     <dependencyManagement>
         <dependencies>
-           
+            <!--数据库-->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>
