@@ -18,7 +18,7 @@ public class MysiseUserServiceApplicationTests {
     private UserService userService;
 
     @Test
-    public void contextLoads() {
+    public void test() {
 
         List<User> list =  userService.listUser();
         Assert.assertNotNull(list);

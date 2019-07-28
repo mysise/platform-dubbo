@@ -3,18 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>platform-dubbo</artifactId>
+        <artifactId>mysise-demo</artifactId>
         <groupId>org.mysise</groupId>
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>mysise-service</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>mysise-user</module>
-        <module>mysise-demo</module>
-    </modules>
+    <artifactId>mysise-demo-api</artifactId>
 
 
 </project>
