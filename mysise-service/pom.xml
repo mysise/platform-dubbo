@@ -12,7 +12,6 @@
     <artifactId>mysise-service</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>mysise-user</module>
         <module>mysise-demo</module>
         <module>mysise-demo1</module>
     </modules>
