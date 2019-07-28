@@ -11,5 +11,13 @@
 
     <artifactId>mysise-demo-api</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.mysise</groupId>
+            <artifactId>mysise-user-api</artifactId>
+            <version>1.0.0</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
 
 </project>
