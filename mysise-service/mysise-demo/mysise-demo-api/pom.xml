@@ -14,7 +14,7 @@
     <dependencies>
         <dependency>
             <groupId>org.mysise</groupId>
-            <artifactId>mysise-user-api</artifactId>
+            <artifactId>mysise-demo1-api</artifactId>
             <version>1.0.0</version>
             <scope>compile</scope>
         </dependency>

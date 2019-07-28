@@ -6,8 +6,8 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.mysise.demo.api.DemoService;
 import org.mysise.demo.entity.DemoEntity;
 import org.mysise.demo.mapper.DemoMapper;
-import org.mysise.user.api.UserService;
-import org.mysise.user.entity.User;
+import org.mysise.demo1.api.Demo1Service;
+import org.mysise.demo1.entity.User;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -17,12 +17,12 @@ import java.util.List;
 @Component
 public class DemoServiceImpl extends ServiceImpl<DemoMapper, DemoEntity> implements DemoService {
 
-    @Reference(interfaceClass = UserService.class, check = false)
-    private UserService userService;
+    @Reference(interfaceClass = Demo1Service.class, check = false)
+    private Demo1Service demo1Service;
 
     @Override
     public List<User> getName() {
 
-        return userService.listUser();
+        return demo1Service.listUser();
     }
 }

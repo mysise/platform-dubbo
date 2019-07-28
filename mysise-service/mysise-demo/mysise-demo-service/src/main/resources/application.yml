@@ -1,6 +1,6 @@
 
 server:
-  port: 8081
+  port: 8080
   version: 1.0.0
 
 mybatis-plus:
@@ -57,4 +57,4 @@ spring:
     registry: zookeeper://bt.mysise.org:2181
     protocol:
       name: dubbo
-      port: 20881
+      port: 20880
