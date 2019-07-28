@@ -3,21 +3,17 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>mysise-demo</artifactId>
+        <artifactId>mysise-service</artifactId>
         <groupId>org.mysise</groupId>
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <packaging>jar</packaging>
-    <artifactId>mysise-demo-api</artifactId>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.mysise</groupId>
-            <artifactId>mysise-user-api</artifactId>
-            <version>1.0.0</version>
-            <scope>compile</scope>
-        </dependency>
-    </dependencies>
+    <artifactId>mysise-demo1</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>mysise-demo1-api</module>
+    </modules>
+
 
 </project>
