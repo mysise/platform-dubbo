@@ -13,7 +13,6 @@
     <packaging>pom</packaging>
     <modules>
         <module>mysise-demo1-api</module>
+        <module>mysise-demo1-service</module>
     </modules>
-
-
 </project>

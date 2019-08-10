@@ -1,14 +1,12 @@
 package org.mysise.demo.api;
 
-import com.baomidou.mybatisplus.extension.service.IService;
-import org.mysise.demo.entity.DemoEntity;
-import org.mysise.demo1.entity.User;
 
 import java.util.List;
+import java.util.Map;
 
-public interface DemoService extends IService<DemoEntity> {
+public interface DemoService {
 
+    String getName();
 
-
-    List<User> getName();
+    List<Map<String,Object>> listUsers();
 }

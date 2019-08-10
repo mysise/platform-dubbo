@@ -15,11 +15,8 @@
         <module>mysise-demo</module>
         <module>mysise-demo1</module>
     </modules>
+    <properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-        </dependency>
-    </dependencies>
+    </properties>
+
 </project>

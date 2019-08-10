@@ -22,18 +22,11 @@
             <artifactId>mysise-common</artifactId>
             <version>1.0.0</version>
         </dependency>
-        <!-- dubbo依赖开始 -->
         <dependency>
             <groupId>com.alibaba.spring.boot</groupId>
             <artifactId>dubbo-spring-boot-starter</artifactId>
         </dependency>
-        <!--        <dependency>-->
-        <!--            <groupId>com.101tec</groupId>-->
-        <!--            <artifactId>zkclient</artifactId>-->
-        <!--            <version>0.10</version>-->
-        <!--        </dependency>-->
 
-        <!-- dubbo依赖结束 -->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
@@ -42,6 +35,7 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.mysise</groupId>
             <artifactId>mysise-demo1-api</artifactId>
@@ -49,6 +43,10 @@
             <scope>compile</scope>
         </dependency>
 
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

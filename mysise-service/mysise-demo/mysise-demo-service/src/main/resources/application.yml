@@ -17,9 +17,9 @@ logging:
 spring:
   datasource:
     druid:
-      url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=false
-      username: testdb
-      password: Z2cEcbLhXLSE6Fj3
+      url: jdbc:mysql://localhost:3306/testdb?useUnicode=true&characterEncoding=utf-8&useSSL=false
+      username: root
+      password: 123456
       driver-class-name: com.mysql.jdbc.Driver
       #初始化时建立物理连接的个数
       initial-size: 5
@@ -57,4 +57,4 @@ spring:
     registry: zookeeper://localhost:2181
     protocol:
       name: dubbo
-      port: 20880
+      port: 20881
