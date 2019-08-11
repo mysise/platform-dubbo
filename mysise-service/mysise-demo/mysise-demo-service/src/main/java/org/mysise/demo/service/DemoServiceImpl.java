@@ -2,8 +2,10 @@ package org.mysise.demo.service;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.dubbo.config.annotation.Service;
+import org.mysise.common.utils.RedisUtils;
 import org.mysise.demo.api.DemoService;
 import org.mysise.demo1.api.Demo1Service;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -17,8 +19,11 @@ public class DemoServiceImpl implements DemoService {
     @Reference(interfaceClass = Demo1Service.class, check = false)
     private Demo1Service demo1Service;
 
+    @Autowired
+    private RedisUtils redisUtils;
     @Override
     public String getName() {
+        redisUtils.set("hi","Hello World");
         return "Hello World";
     }
 
