@@ -6,7 +6,7 @@ import java.util.Map;
 
 public interface DemoService {
 
-    String getName();
+    String getName(String name);
 
     List<Map<String,Object>> listUsers();
 }

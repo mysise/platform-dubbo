@@ -22,9 +22,9 @@ public class DemoServiceImpl implements DemoService {
     @Autowired
     private RedisUtils redisUtils;
     @Override
-    public String getName() {
-        redisUtils.set("hi","Hello World");
-        return "Hello World";
+    public String getName(String name) {
+        redisUtils.set("hi",name);
+        return redisUtils.get("hi").toString();
     }
 
     @Override
