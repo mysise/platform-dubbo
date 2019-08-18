@@ -134,7 +134,7 @@ public class RedisUtils {
     /**
      * 递增
      * @param key 键
-     * @param by 要增加几(大于0)
+     * @param delta 要增加几(大于0)
      * @return
      */
     public long incr(String key, long delta){
@@ -147,7 +147,7 @@ public class RedisUtils {
     /**
      * 递减
      * @param key 键
-     * @param by 要减少几(小于0)
+     * @param delta 要减少几(小于0)
      * @return
      */
     public long decr(String key, long delta){
@@ -471,7 +471,6 @@ public class RedisUtils {
      * 将list放入缓存
      * @param key 键
      * @param value 值
-     * @param time 时间(秒)
      * @return
      */
     public boolean lSet(String key, List<Object> value) {
