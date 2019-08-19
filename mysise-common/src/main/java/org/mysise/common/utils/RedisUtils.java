@@ -1,5 +1,6 @@
 package org.mysise.common.utils;
 
+import org.mysise.common.cache.CacheService;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
@@ -17,7 +18,7 @@ import java.util.concurrent.TimeUnit;
  * @since 2019/8/11 22:36
  */
 @Component
-public class RedisUtils {
+public class RedisUtils implements CacheService {
 
     @Resource
     private RedisTemplate<String, Object> redisTemplate;
@@ -33,6 +34,7 @@ public class RedisUtils {
      * @param time 时间(秒)
      * @return boolean
      */
+    @Override
     public boolean expire(String key,long time){
         try {
             if(time>0){
