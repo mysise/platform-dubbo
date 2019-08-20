@@ -1,7 +1,6 @@
-package org.mysise.common.base;
+package org.mysise.common.base.code;
 
 
-import org.mysise.common.base.BaseCode;
 import org.mysise.common.base.Constant;
 
 /**
@@ -20,7 +19,7 @@ public enum CommonCode implements BaseCode {
 	private String code;
 	private String message;
 
-	private CommonCode(String code, String message) {
+	CommonCode(String code, String message) {
 		this.code = code;
 		this.message = message;
 	}

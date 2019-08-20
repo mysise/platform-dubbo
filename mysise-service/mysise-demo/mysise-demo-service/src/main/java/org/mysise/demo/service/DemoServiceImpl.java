@@ -2,6 +2,7 @@ package org.mysise.demo.service;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.dubbo.config.annotation.Service;
+import org.mysise.common.base.FeedResult;
 import org.mysise.common.utils.RedisUtils;
 import org.mysise.demo.api.DemoService;
 import org.mysise.demo1.api.Demo1Service;
@@ -22,13 +23,13 @@ public class DemoServiceImpl implements DemoService {
     @Autowired
     private RedisUtils redisUtils;
     @Override
-    public String getName(String name) {
+    public FeedResult<String> getName(String name) {
         redisUtils.set("hi",name);
-        return redisUtils.get("hi").toString();
+        return new FeedResult<>(redisUtils.get("hi").toString());
     }
 
     @Override
-    public List<Map<String,Object>> listUsers() {
+    public FeedResult<List<Map<String,Object>>> listUsers() {
 
         return demo1Service.listUser();
     }

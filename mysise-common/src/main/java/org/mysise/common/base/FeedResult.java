@@ -1,5 +1,8 @@
 package org.mysise.common.base;
 
+import org.mysise.common.base.code.BaseCode;
+import org.mysise.common.base.code.CommonCode;
+
 /**
  * <p>
  *  返回的数据实体
@@ -63,9 +66,9 @@ public class FeedResult<T> {
         this.result = result;
     }
 
-    public FeedResult(CommonCode commonCode){
-        this.code=commonCode.getCode();
-        this.message=commonCode.getMessage();
+    public FeedResult(BaseCode baseCode){
+        this.code=baseCode.getCode();
+        this.message=baseCode.getMessage();
     }
     public FeedResult() {
         this(CommonCode.SUCCESS);

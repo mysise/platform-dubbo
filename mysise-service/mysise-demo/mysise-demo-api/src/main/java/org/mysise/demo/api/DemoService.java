@@ -1,12 +1,14 @@
 package org.mysise.demo.api;
 
 
+import org.mysise.common.base.FeedResult;
+
 import java.util.List;
 import java.util.Map;
 
 public interface DemoService {
 
-    String getName(String name);
+    FeedResult<String> getName(String name);
 
-    List<Map<String,Object>> listUsers();
+    FeedResult<List<Map<String,Object>>> listUsers();
 }

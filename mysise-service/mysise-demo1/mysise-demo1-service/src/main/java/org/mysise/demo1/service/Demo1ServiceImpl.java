@@ -1,6 +1,7 @@
 package org.mysise.demo1.service;
 
 import com.alibaba.dubbo.config.annotation.Service;
+import org.mysise.common.base.FeedResult;
 import org.mysise.demo1.api.Demo1Service;
 import org.mysise.demo1.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ public class Demo1ServiceImpl implements Demo1Service {
     private UserMapper userMapper;
 
     @Override
-    public List<Map<String,Object>> listUser() {
-        return userMapper.selectMaps(null);
+    public FeedResult<List<Map<String,Object>>> listUser() {
+        return new FeedResult<>(userMapper.selectMaps(null)) ;
     }
 }
