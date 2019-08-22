@@ -2,6 +2,7 @@ package org.mysise.demo;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mysise.common.base.FeedResult;
 import org.mysise.demo.api.DemoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -22,7 +23,7 @@ public class DemoServiceApplicationTests {
     @Test
     public void test() {
 
-        List<Map<String,Object>> result = demoService.listUsers();
+        FeedResult<List<Map<String,Object>> >result = demoService.listUsers();
         Assert.notNull(result);
     }
 

@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 
-@Service(version = "1.0.0",interfaceClass = DemoService.class)
+@Service(version = "1.0.0",interfaceClass = DemoService.class,filter = "tracing")
 @Component
 public class DemoServiceImpl implements DemoService {
 

@@ -1,7 +1,5 @@
 server:
   port: 8081
-  version: 1.0.0
-
 mybatis-plus:
   mapper-locations: classpath:/mapper/*Mapper.xml
   type-aliases-package: org.mysise.demo1.entity

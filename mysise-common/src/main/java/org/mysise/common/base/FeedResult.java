@@ -3,6 +3,8 @@ package org.mysise.common.base;
 import org.mysise.common.base.code.BaseCode;
 import org.mysise.common.base.code.CommonCode;
 
+import java.io.Serializable;
+
 /**
  * <p>
  *  返回的数据实体
@@ -11,7 +13,7 @@ import org.mysise.common.base.code.CommonCode;
  *
  * @since 2018/4/21 15:29
  */
-public class FeedResult<T> {
+public class FeedResult<T> implements Serializable {
 
     /**
      * <p>
