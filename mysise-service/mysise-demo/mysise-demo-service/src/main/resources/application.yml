@@ -1,6 +1,6 @@
 
 server:
-  port: 8080
+  port: 9080
   version: 1.0.0
 
 mybatis-plus:
@@ -52,7 +52,6 @@ spring:
     proxy-target-class: true
   dubbo:
     server: true
-    #    scan: org.mysise.user.service
     registry: zookeeper://localhost:2181
     protocol:
       name: dubbo

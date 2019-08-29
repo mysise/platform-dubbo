@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 @Component
-@Service(version = "1.0.0",interfaceClass = Demo1Service.class,filter = "tracing")
+@Service(version = "${demo1.service.version}",interfaceClass = Demo1Service.class,filter = "tracing",timeout = 100000)
 public class Demo1ServiceImpl implements Demo1Service {
 
     @Autowired
@@ -19,6 +19,7 @@ public class Demo1ServiceImpl implements Demo1Service {
 
     @Override
     public FeedResult<List<Map<String,Object>>> listUser() {
-        return new FeedResult<>(userMapper.selectMaps(null)) ;
+        List<Map<String,Object>> list = userMapper.selectMaps(null);
+        return new FeedResult<>(list) ;
     }
 }

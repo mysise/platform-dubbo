@@ -13,11 +13,11 @@ import java.util.List;
 import java.util.Map;
 
 
-@Service(version = "1.0.0",interfaceClass = DemoService.class,filter = "tracing")
+@Service(version = "${demo.service.version}",interfaceClass = DemoService.class,filter = "tracing",timeout = 10000)
 @Component
 public class DemoServiceImpl implements DemoService {
 
-    @Reference(interfaceClass = Demo1Service.class, check = false)
+    @Reference(interfaceClass = Demo1Service.class,version = "${demo1.service.version}",check = false,timeout = 10000)
     private Demo1Service demo1Service;
 
     @Autowired
