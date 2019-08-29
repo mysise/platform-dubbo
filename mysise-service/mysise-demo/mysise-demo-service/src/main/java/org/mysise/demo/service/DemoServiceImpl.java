@@ -2,6 +2,7 @@ package org.mysise.demo.service;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.dubbo.config.annotation.Service;
+import lombok.extern.slf4j.Slf4j;
 import org.mysise.common.base.FeedResult;
 import org.mysise.common.utils.RedisUtils;
 import org.mysise.demo.api.DemoService;
@@ -13,8 +14,9 @@ import java.util.List;
 import java.util.Map;
 
 
-@Service(version = "${demo.service.version}",interfaceClass = DemoService.class,filter = "tracing",timeout = 10000)
+@Service(version = "${demo.service.version}",interfaceClass = DemoService.class,filter = "tracing")
 @Component
+@Slf4j
 public class DemoServiceImpl implements DemoService {
 
     @Reference(interfaceClass = Demo1Service.class,version = "${demo1.service.version}",check = false,timeout = 10000)
@@ -25,6 +27,11 @@ public class DemoServiceImpl implements DemoService {
     @Override
     public FeedResult<String> getName(String name) {
         redisUtils.set("hi",name);
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            log.error(e.getLocalizedMessage());
+        }
         return new FeedResult<>(redisUtils.get("hi").toString());
     }
 

@@ -15,7 +15,7 @@ import java.util.Map;
 public class TestController {
 
 
-    @Reference(interfaceClass = DemoService.class, check = false,version = "${demo.service.version}",timeout = 100000)
+    @Reference(interfaceClass = DemoService.class, check = false,version = "${demo.service.version}",timeout = 1000,mock = "true")
     private DemoService demoService;
 
 

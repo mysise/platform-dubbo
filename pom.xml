@@ -82,17 +82,6 @@
             <artifactId>zkclient</artifactId>
             <version>${zkclient.version}</version>
         </dependency>
-
-        <!-- https://mvnrepository.com/artifact/com.alibaba.csp/sentinel-dubbo-adapter -->
-
-
-<!--        &lt;!&ndash; https://mvnrepository.com/artifact/com.alibaba.csp/sentinel-transport-simple-http &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>com.alibaba.csp</groupId>-->
-<!--            <artifactId>sentinel-transport-simple-http</artifactId>-->
-<!--            <version>1.6.3</version>-->
-<!--        </dependency>-->
-
     </dependencies>
 
 
@@ -148,7 +137,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <!--    sentinel  dubbo-->
+            <!--    sentinel 流量卫士  dubbo-->
             <dependency>
                 <groupId>com.alibaba.csp</groupId>
                 <artifactId>sentinel-dubbo-adapter</artifactId>

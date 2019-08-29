@@ -1,15 +1,14 @@
-package org.mysise.demo.service.mock;
+package org.mysise.demo.api;
 
 import org.mysise.common.base.FeedResult;
-import org.mysise.demo.api.DemoService;
 
 import java.util.List;
 import java.util.Map;
 
-public class DemoServiceImplMock implements DemoService {
+public class DemoServiceMock implements DemoService {
     @Override
     public FeedResult<String> getName(String name) {
-        return new FeedResult<>("服务繁忙");
+        return new FeedResult<>("demoService 调用失败");
     }
 
     @Override
