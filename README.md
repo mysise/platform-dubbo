@@ -5,3 +5,5 @@ Spring-boot + dubbo + mybatis plus脚手架
 流控，熔断  sentinel
 
 链路追踪：zipkin
+
+配置中心 nacos
