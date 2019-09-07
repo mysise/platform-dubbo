@@ -8,11 +8,12 @@ import java.util.Map;
 public class DemoServiceMock implements DemoService {
     @Override
     public FeedResult<String> getName(String name) {
-        return new FeedResult<>("demoService 调用失败");
+        return new FeedResult<>("-1","demoService 调用失败");
     }
 
     @Override
     public FeedResult<List<Map<String, Object>>> listUsers() {
-        return null;
+        return new FeedResult<>("-1","demoService 调用失败");
     }
+
 }
