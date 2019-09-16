@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 
-@Service(version = "${demo.service.version}",interfaceClass = DemoService.class,filter = "tracing")
+@Service(version = "${demo.service.version}",interfaceClass = DemoService.class,filter = {"tracing","ipFilter"})
 @Component
 @Slf4j
 public class DemoServiceImpl implements DemoService {
