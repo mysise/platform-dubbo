@@ -9,6 +9,7 @@
     </parent>
     <artifactId>mysise-demo-gateway</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
     <name>mysise-demo-gateway</name>
     <description>Demo project for Spring Boot</description>
 
