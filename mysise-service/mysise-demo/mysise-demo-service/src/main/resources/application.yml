@@ -1,6 +1,5 @@
-
 server:
-  port: 9080
+  port: 8080
   version: 1.0.0
 
 mybatis-plus:
