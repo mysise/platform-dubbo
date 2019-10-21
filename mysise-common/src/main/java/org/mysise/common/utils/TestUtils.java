@@ -11,7 +11,7 @@ public class TestUtils {
         List<String> list1 = new CopyOnWriteArrayList<>();
         list1.add("1");
         list1.add("2");
-        list1.add(0,"3");
+        list1.set(0,"3");
         list1.forEach(a->{
             System.out.println(a);
         });

@@ -34,6 +34,7 @@
         <brave.version>5.4.2</brave.version>
         <zipkin-reporter.version>2.7.9</zipkin-reporter.version>
         <sentinel-dubbo.version>1.6.3</sentinel-dubbo.version>
+        <sentinel-transport-simple-http.version>1.6.3</sentinel-transport-simple-http.version>
         <zkclient.version>0.10</zkclient.version>
         <nacos-config-starter.version>0.2.3</nacos-config-starter.version>
     </properties>
@@ -144,7 +145,11 @@
                 <artifactId>sentinel-dubbo-adapter</artifactId>
                 <version>${sentinel-dubbo.version}</version>
             </dependency>
-
+            <dependency>
+                <groupId>com.alibaba.csp</groupId>
+                <artifactId>sentinel-transport-simple-http</artifactId>
+                <version>${sentinel-transport-simple-http.version}</version>
+            </dependency>
             <!-- https://mvnrepository.com/artifact/com.alibaba.boot/nacos-config-spring-boot-starter -->
             <dependency>
                 <groupId>com.alibaba.boot</groupId>

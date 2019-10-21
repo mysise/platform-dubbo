@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.mysise.common.base.FeedResult;
 import org.mysise.demo.api.DemoService;
 import org.mysise.demo1.api.Demo1Service;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -25,8 +26,12 @@ public class DemoServiceImpl implements DemoService {
     private Demo1Service demo1Service;
 
 //    @Autowired
+//    private List<DemoService> demoServices1;
+
+//    @Autowired
 //    private RedisUtils redisUtils;
     @Override
+    @Async
     public FeedResult<String> getName(String name) {
         //redisUtils.set("hi",name);
         log.info("nacos aaa : {} ",aaa);
