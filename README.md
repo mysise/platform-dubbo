@@ -8,6 +8,4 @@ Spring-boot + dubbo + mybatis plus脚手架
 
 配置中心 nacos
 
-1、启动zookeeper
-2、启动nacos
-3、启动zipkin
+注册中心 nacos

@@ -37,6 +37,8 @@
         <sentinel-transport-simple-http.version>1.6.3</sentinel-transport-simple-http.version>
         <zkclient.version>0.10</zkclient.version>
         <nacos-config-starter.version>0.2.3</nacos-config-starter.version>
+        <dubbo-registry-nacos.version>2.6.7</dubbo-registry-nacos.version>
+        <spring-context-support.version>1.0.3</spring-context-support.version>
     </properties>
 
     <dependencies>
@@ -84,6 +86,8 @@
             <artifactId>zkclient</artifactId>
             <version>${zkclient.version}</version>
         </dependency>
+
+
     </dependencies>
 
 
@@ -161,6 +165,23 @@
                 <groupId>com.alibaba.boot</groupId>
                 <artifactId>nacos-config-spring-boot-actuator</artifactId>
                 <version>${nacos-config-starter.version}</version>
+            </dependency>
+<!--            配置中心nacos-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>dubbo-registry-nacos</artifactId>
+                <version>${dubbo-registry-nacos.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>fastjson</artifactId>
+                        <groupId>com.alibaba</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.spring</groupId>
+                <artifactId>spring-context-support</artifactId>
+                <version>${spring-context-support.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
