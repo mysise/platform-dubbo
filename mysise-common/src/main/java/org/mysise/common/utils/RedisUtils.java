@@ -1,5 +1,6 @@
 package org.mysise.common.utils;
 
+import lombok.extern.slf4j.Slf4j;
 import org.mysise.common.cache.CacheService;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
@@ -18,6 +19,7 @@ import java.util.concurrent.TimeUnit;
  * @since 2019/8/11 22:36
  */
 @Component
+@Slf4j
 public class RedisUtils implements CacheService {
 
     @Resource
@@ -42,7 +44,7 @@ public class RedisUtils implements CacheService {
             }
             return true;
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
             return false;
         }
     }
@@ -52,6 +54,7 @@ public class RedisUtils implements CacheService {
      * @param key 键 不能为null
      * @return 时间(秒) 返回0代表为永久有效
      */
+    @Override
     public long getExpire(String key){
         return redisTemplate.getExpire(key,TimeUnit.SECONDS);
     }
@@ -65,7 +68,7 @@ public class RedisUtils implements CacheService {
         try {
             return redisTemplate.hasKey(key);
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
             return false;
         }
     }
@@ -107,7 +110,7 @@ public class RedisUtils implements CacheService {
             redisTemplate.opsForValue().set(key, value);
             return true;
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
             return false;
         }
     }
@@ -128,7 +131,7 @@ public class RedisUtils implements CacheService {
             }
             return true;
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
             return false;
         }
     }
@@ -191,7 +194,7 @@ public class RedisUtils implements CacheService {
             redisTemplate.opsForHash().putAll(key, map);
             return true;
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
             return false;
         }
     }
@@ -211,7 +214,7 @@ public class RedisUtils implements CacheService {
             }
             return true;
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
             return false;
         }
     }
@@ -228,7 +231,7 @@ public class RedisUtils implements CacheService {
             redisTemplate.opsForHash().put(key, item, value);
             return true;
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
             return false;
         }
     }
@@ -249,7 +252,7 @@ public class RedisUtils implements CacheService {
             }
             return true;
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
             return false;
         }
     }
@@ -305,7 +308,7 @@ public class RedisUtils implements CacheService {
         try {
             return redisTemplate.opsForSet().members(key);
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
             return null;
         }
     }
@@ -320,7 +323,7 @@ public class RedisUtils implements CacheService {
         try {
             return redisTemplate.opsForSet().isMember(key, value);
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
             return false;
         }
     }
@@ -335,7 +338,7 @@ public class RedisUtils implements CacheService {
         try {
             return redisTemplate.opsForSet().add(key, values);
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
             return 0;
         }
     }
@@ -353,7 +356,7 @@ public class RedisUtils implements CacheService {
             if(time>0) expire(key, time);
             return count;
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
             return 0;
         }
     }
@@ -367,7 +370,7 @@ public class RedisUtils implements CacheService {
         try {
             return redisTemplate.opsForSet().size(key);
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
             return 0;
         }
     }
@@ -383,7 +386,7 @@ public class RedisUtils implements CacheService {
             Long count = redisTemplate.opsForSet().remove(key, values);
             return count;
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
             return 0;
         }
     }
@@ -400,7 +403,7 @@ public class RedisUtils implements CacheService {
         try {
             return redisTemplate.opsForList().range(key, start, end);
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
             return null;
         }
     }
@@ -414,7 +417,7 @@ public class RedisUtils implements CacheService {
         try {
             return redisTemplate.opsForList().size(key);
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
             return 0;
         }
     }
@@ -429,7 +432,7 @@ public class RedisUtils implements CacheService {
         try {
             return redisTemplate.opsForList().index(key, index);
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
             return null;
         }
     }
@@ -438,7 +441,6 @@ public class RedisUtils implements CacheService {
      * 将list放入缓存
      * @param key 键
      * @param value 值
-     * @param time 时间(秒)
      * @return
      */
     public boolean lSet(String key, Object value) {
@@ -446,7 +448,7 @@ public class RedisUtils implements CacheService {
             redisTemplate.opsForList().rightPush(key, value);
             return true;
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
             return false;
         }
     }
@@ -461,10 +463,12 @@ public class RedisUtils implements CacheService {
     public boolean lSet(String key, Object value, long time) {
         try {
             redisTemplate.opsForList().rightPush(key, value);
-            if (time > 0) expire(key, time);
+            if (time > 0) {
+                expire(key, time);
+            }
             return true;
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
             return false;
         }
     }
@@ -480,7 +484,7 @@ public class RedisUtils implements CacheService {
             redisTemplate.opsForList().rightPushAll(key, value);
             return true;
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
             return false;
         }
     }
@@ -495,10 +499,12 @@ public class RedisUtils implements CacheService {
     public boolean lSet(String key, List<Object> value, long time) {
         try {
             redisTemplate.opsForList().rightPushAll(key, value);
-            if (time > 0) expire(key, time);
+            if (time > 0) {
+                expire(key, time);
+            }
             return true;
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
             return false;
         }
     }
@@ -515,7 +521,7 @@ public class RedisUtils implements CacheService {
             redisTemplate.opsForList().set(key, index, value);
             return true;
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
             return false;
         }
     }
@@ -532,7 +538,7 @@ public class RedisUtils implements CacheService {
             Long remove = redisTemplate.opsForList().remove(key, count, value);
             return remove;
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
             return 0;
         }
     }
