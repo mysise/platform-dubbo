@@ -25,3 +25,10 @@
 **系统大概架构**
 
 ![架构](doc/images/mysise-dubbo.jpg)
+
+
+**启动流程**
+    
+    1、先启动注册中心、配置中心  Nacos
+    2、启动 sentinel
+    3、先启动service，后启动web
