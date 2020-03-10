@@ -9,12 +9,3 @@ Spring-boot + dubbo + mybatis plus脚手架
 配置中心 nacos
 
 注册中心 nacos
-
-
-## 作者：
-```
-范总
-欧工
-狗哥
-红毛
-```
