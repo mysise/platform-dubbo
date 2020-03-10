@@ -9,7 +9,9 @@
     mysise-service -----------dubbo业务服务层      
     
 **相关组件**
-
+    
+    网关：（PS：缺少）
+    
     缓存：redis
 
     流控，熔断  sentinel
