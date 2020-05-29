@@ -1,5 +1,5 @@
 
-**基于Spring boot 2.x.x + dubbo 构建的微服务脚手架**
+**基于Spring boot 2.x.x + dubbo 构建的微服务脚手架（消费模式实现的业务网关）**
 
 
 **项目结构**
